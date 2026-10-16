@@ -5,5 +5,5 @@ scikit-learn>=1.9
 altair>=6.3
 joblib>=1.6
 pyarrow>=25.0
-opencv-python-headless>=5.0
+opencv-python-headless
 ultralytics>=8.4
