@@ -1,29 +1,16 @@
-from __future__ import annotations
-
-import csv
-import json
-from dataclasses import dataclass, field
-from functools import lru_cache
-from pathlib import Path
-from typing import Any, Callable
-
-import cv2
-import numpy as np
-import pandas as pd
-from ultralytics import YOLO
-
 
 ROOT = Path(__file__).parent
-ASSET_DIR = ROOT / "assets" / "videos"
+ASSET_DIR = ROOT
 OUTPUT_DIR = ROOT / "outputs" / "video_analysis"
-MODEL_DIR = ROOT / "models" / "vision"
+MODEL_DIR = ROOT
 
-VIDEO_PATH = ASSET_DIR / "traffic_sample.mp4"
-VISION_MODEL_PATH = MODEL_DIR / "yolo11n.pt"
+VIDEO_PATH = ROOT / "traffic_sample.mp4"
+VISION_MODEL_PATH = ROOT / "yolo11n.pt"
 PROCESSED_VIDEO_PATH = OUTPUT_DIR / "traffic_sample_detected.mp4"
 SUMMARY_PATH = OUTPUT_DIR / "traffic_video_summary.json"
 DETECTIONS_PATH = OUTPUT_DIR / "traffic_video_detections.csv"
 REPORT_PATH = OUTPUT_DIR / "traffic_video_report.txt"
+
 
 VEHICLE_CLASS_IDS = {2: "car", 3: "motorcycle", 5: "bus", 7: "truck"}
 LOW_TRAFFIC_MAX_DETECTIONS = 4
