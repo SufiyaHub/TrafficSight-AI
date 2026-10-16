@@ -15,12 +15,14 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
+
 ROOT = Path(__file__).parent
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT
 MODEL_DIR = ROOT / "models"
-DATA_PATH = DATA_DIR / "traffic_data.csv"
+DATA_PATH = ROOT / "traffic_data.csv"
 MODEL_PATH = MODEL_DIR / "traffic_model.joblib"
 METRICS_PATH = MODEL_DIR / "metrics.json"
+
 
 FEATURE_COLUMNS = [
     "hour",
